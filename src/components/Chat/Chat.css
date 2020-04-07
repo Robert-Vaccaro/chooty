@@ -1,12 +1,99 @@
 .outerContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   background-color: rgb(250, 250, 250);
 
 }
-
+.customLayout{
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.customLayout:hover{
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.disableCustomLayout{
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.disableCustomLayout:hover{
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.enableCustomLayout{
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.enableCustomLayout:hover{
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.grabButton{
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 45px;
+  width: 120px;
+}
+.grabButton:hover{
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 45px;
+  width: 120px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -59,3 +146,155 @@ border-radius: 10px;
     width: 60%;
   }
 } */
+
+#paper * {
+  color:#FFF;
+  font-size:20px;
+  box-sizing: content-box;
+  max-width: 710px;
+}
+#margin {
+  margin-left:12px;
+  margin-bottom:20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; 
+}
+#textNotes {
+  width:500px;
+  overflow:auto;
+  background-color:#FFF;
+  color:#222;
+  font-family:Courier, monospace;
+  font-weight:normal;
+  font-size:24px;
+  resize:none;
+  line-height:40px;
+  padding-left:100px;
+  padding-right:100px;
+  padding-top:45px;
+  padding-bottom:34px;
+  background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+  background-repeat:repeat-y, repeat;
+  -webkit-border-radius:12px;
+  border-radius:12px;
+  -webkit-box-shadow: 0px 2px 14px #000;
+  box-shadow: 0px 2px 14px #000;
+  border-top:1px solid #FFF;
+  border-bottom:1px solid #FFF;
+}
+#title {
+  background-color:transparent;
+  border-bottom:3px solid #FFF;
+  color:#FFF;
+  font-size:20px;
+  font-family:Courier, monospace;
+  height:28px;
+  font-weight:bold;
+  width:220px;
+}
+#button {
+  cursor:pointer;
+  margin-top:20px;
+  float:right;
+  height:40px;
+  padding-left:24px;
+  padding-right:24px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:20px;
+  color:#FFF;
+  text-shadow: 0px -1px 0px #000000;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+  border-top:1px solid #FFF;
+  -webkit-box-shadow: 0px 2px 14px #000;
+  box-shadow: 0px 2px 14px #000;
+  background-color: #62add6;
+  background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+  background-repeat:repeat-x;
+}
+#button:active {
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+}
+#button:focus {
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+}
+
+#submitNotes{
+  margin: auto;
+  position: absolute;
+  display: flex;
+
+  font-size: 18px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 45px;
+  width: 120px;
+}
+#submitNotes:hover{
+  margin: auto;
+  position: absolute;
+  display: flex;
+
+  font-size: 18px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 45px;
+  width: 120px;
+}
+
+
+.button-up,
+.button-down {
+  position: absolute;
+  padding: 5px;
+  margin-top: -35px; 
+  margin-left:45%;
+  background: #000;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+}
+
+.button-down:hover {
+  transform: translate3d(0, 10px, 0);
+  margin-top: -35px; 
+  margin-left:45%;
+}
+
+.button-up:hover {
+  transform: translate3d(0, -10px, 0);
+}
+
+.button-up::after,
+.button-down::after {
+  
+  content: "";
+  position: absolute;
+  left: 17px;
+  z-index: 11;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+.button-up::after {
+  top: 20px;
+  transform: rotate(45deg);
+}
+
+.button-down::after {
+  top: 10px;
+  transform: rotate(225deg);
+}

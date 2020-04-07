@@ -6,6 +6,7 @@ import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
+ 
 import $ from 'jquery'
 import 'jquery-ui'
 import './Chat.css';
@@ -14,6 +15,8 @@ import "../../../node_modules/jquery-ui/ui/widgets/resizable.js"
 import "../../../node_modules/jquery-ui/themes/base/resizable.css"
 import "../../../node_modules/jquery-ui/ui/widgets/draggable"
 import "../../../node_modules/jquery-ui/themes/base/draggable.css"
+import Tooltip from '../../../node_modules/@material-ui/core/Tooltip';
+import { makeStyles } from '@material-ui/core/styles';
 let socket;
 
 const Chat = ({ location }) => {
@@ -56,18 +59,57 @@ const Chat = ({ location }) => {
     }
   }
   $(".onlineContainer").hide();
+  $(".disableCustomLayout").hide();
+  $(".enableCustomLayout").hide();
+  $(".button-down").hide();
+  $(".grabButton").hide();
   $(".onlineButton").click(function(){
    $(".onlineContainer").toggle();
   });
- $(document).ready(function() {
-  $( ".videoContainer" ).resizable();
-  $( ".videoContainer").draggable();
-  $( ".container" ).resizable();
-  $( ".container").draggable();
 
- });
+  $(".customLayout").click(function(){
+    $(".disableCustomLayout").show();
+    $(".customLayout").hide();
+    $(".grabButton").show();
+    $(".button-down").show();
+    $( ".videoContainer" ).resizable();
+    $( ".videoContainer").draggable();
+    $( ".container" ).resizable();
+    $( ".container").draggable();
+    $( "#textNotes" ).resizable();
+    $( "#wrapper").draggable();
+
+  });
+  $(".disableCustomLayout").click(function(){
+    $(".disableCustomLayout").hide();
+    $(".enableCustomLayout").show();
+    $(".grabButton").hide();
+    $(".button-down").hide();
+    $( ".videoContainer" ).resizable("disable");
+    $( ".videoContainer").draggable("disable");
+    $( ".container" ).resizable("disable");
+    $( ".container").draggable("disable");
+    $( "#textNotes" ).resizable("disable");
+    $( "#wrapper").draggable("disable");
+  });
+  $(".enableCustomLayout").click(function(){
+    $(".disableCustomLayout").show();
+    $(".enableCustomLayout").hide();
+    $(".grabButton").show();
+    $(".button-down").show();
+    $( ".videoContainer" ).resizable("enable");
+    $( ".videoContainer").draggable("enable");
+    $( ".container" ).resizable("enable");
+    $( ".container").draggable("enable");
+    $( "#textNotes").resizable("enable");
+    $( "#wrapper").draggable("enable");
+  });
+
   return (
     <div className="outerContainer">
+      <button className="customLayout">Change Layout</button>
+      <button className="disableCustomLayout">Keep Layout</button>
+      <button className="enableCustomLayout">Change Layout Again</button>
       <div className="videoContainer">
       <Player
       playsInline
@@ -85,7 +127,17 @@ const Chat = ({ location }) => {
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
-      
+      <div className="noteSection">
+        <div id="wrapper">
+        <div className="grabButton">Move Notes</div>
+            <form id="paper">
+              <textarea placeholder="Enter something funny." id="textNotes" name="text" rows={4} style={{overflow: 'auto', wordWrap: 'break-word', resize: 'none', height: '160px'}} defaultValue={""} />  
+              <Tooltip title="Delete"><div className="button-down"></div></Tooltip>
+              <button id="submitNotes">Submit</button>
+            </form>
+            
+          </div>
+      </div>
     </div>
   );
 }
