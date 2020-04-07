@@ -1,16 +1,31 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
-  color: white;
-  height: 60%;
+  color: rgb(255, 255, 255);
   justify-content: space-between;
-}
+  font-size: 10px;
 
+  border-radius: 10px;
+  width: 250px;
+  
+}
+.textContainer h1{
+  margin: auto;
+padding: 10px;
+ background: #2979FF;
+ border-top-left-radius:10px; 
+ border-top-right-radius:10px; 
+}
 .activeContainer {
   display: flex;
+  color: black;
   align-items: center;
-  margin-bottom: 50%;
+  overflow: auto;
+  font-size: 11px;
+  margin-left: 10px;
+  height: 300px;
+  border-bottom-left-radius:5px; 
+  border-bottom-right-radius:5px; 
 }
 
 .activeItem {
@@ -22,12 +37,14 @@
   padding-left: 10px;
 }
 
-.textContainer h1 {
-  margin-bottom: 0px;
+.peopleOnline{
+  border-radius:5px; 
+  color: rgb(255, 255, 255);
 }
 
+/* 
 @media (min-width: 320px) and (max-width: 1200px) {
   .textContainer {
     display: none;
   }
-}
+} */
