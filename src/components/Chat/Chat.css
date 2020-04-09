@@ -1,11 +1,85 @@
 .outerContainer {
-  display: flex;
+
   height: 100%;
-  background-color: rgb(250, 250, 250);
+
 
 }
-.customLayout{
+.menu{
+  color:white;
   position: absolute;
+  width: 50px;
+  height: 25px;
+  padding: 2px;
+  background-color: #2979FF;
+  z-index:99999;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.menu:hover{
+  color:white;
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  padding: 2px;
+  background-color: rgb(21, 78, 175);
+  z-index:99999;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.buttonStack{
+  display: flex;
+  position: absolute;
+  z-index: 99990;
+  margin-left: 55px;
+  cursor: pointer;
+}
+.toggleNotes{
+  z-index: 999;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.toggleNotes:hover{
+
+  z-index: 999;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.toggleChat{
+
+  z-index: 999;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: #2979FF;
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.toggleChat:hover{
+
+  z-index: 999;
+  display: flex;
+  font-size: 14px;
+  color: white;
+  background: rgb(21, 78, 175);
+  border-radius: 10px;
+  height: 60px;
+  width: 120px;
+}
+.customLayout{
+
   z-index: 999;
   display: flex;
   font-size: 14px;
@@ -16,7 +90,7 @@
   width: 120px;
 }
 .customLayout:hover{
-  position: absolute;
+
   z-index: 999;
   display: flex;
   font-size: 14px;
@@ -28,7 +102,7 @@
 }
 .disableCustomLayout{
   z-index: 999;
-  position: absolute;
+
   display: flex;
   font-size: 14px;
   color: white;
@@ -39,7 +113,7 @@
 }
 .disableCustomLayout:hover{
   z-index: 999;
-  position: absolute;
+
   display: flex;
   font-size: 14px;
   color: white;
@@ -50,7 +124,7 @@
 }
 .enableCustomLayout{
   z-index: 999;
-  position: absolute;
+
   display: flex;
   font-size: 14px;
   color: white;
@@ -61,7 +135,7 @@
 }
 .enableCustomLayout:hover{
   z-index: 999;
-  position: absolute;
+
   display: flex;
   font-size: 14px;
   color: white;
@@ -95,6 +169,8 @@
   width: 120px;
 }
 .container {
+  position: absolute;
+  z-index:9999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -121,6 +197,7 @@ border-radius: 10px;
 
 }
 .videoContainer{
+  position: absolute;
   width:40%;
   display:flex;
   justify-content: center;
@@ -129,6 +206,9 @@ border-radius: 10px;
 
 .onlineButton{
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+.notesSection{
+  position: absolute;
 }
 /* @media (min-width: 320px) and (max-width: 480px) {
   .outerContainer {

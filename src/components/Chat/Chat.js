@@ -58,6 +58,7 @@ const Chat = ({ location }) => {
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   }
+  $(".buttonStack").hide()
   $(".onlineContainer").hide();
   $(".disableCustomLayout").hide();
   $(".enableCustomLayout").hide();
@@ -78,7 +79,18 @@ const Chat = ({ location }) => {
     $( ".container").draggable();
     $( "#textNotes" ).resizable();
     $( "#wrapper").draggable();
-
+  });
+  $(".toggleChat").click(function(){
+    $(".container").toggle();
+  });
+  $(".toggleNotes").click(function(){
+    $(".noteSection").toggle();
+    $(".noteSection").css("position", "absolute");
+    $(".noteSection").css("top", "0px");
+  });
+  $(".menu").click(function(){
+    $(".buttonStack").toggle();
+    
   });
   $(".disableCustomLayout").click(function(){
     $(".disableCustomLayout").hide();
@@ -91,6 +103,7 @@ const Chat = ({ location }) => {
     $( ".container").draggable("disable");
     $( "#textNotes" ).resizable("disable");
     $( "#wrapper").draggable("disable");
+    $(".noteSection").removeAttr('style');
   });
   $(".enableCustomLayout").click(function(){
     $(".disableCustomLayout").show();
@@ -103,13 +116,21 @@ const Chat = ({ location }) => {
     $( ".container").draggable("enable");
     $( "#textNotes").resizable("enable");
     $( "#wrapper").draggable("enable");
+    $(".noteSection").removeAttr('style');
   });
 
   return (
     <div className="outerContainer">
+      <div className="menu">Menu</div>
+      <div className="buttonStack">
+      <div className="layoutButtons">
       <button className="customLayout">Change Layout</button>
       <button className="disableCustomLayout">Keep Layout</button>
       <button className="enableCustomLayout">Change Layout Again</button>
+      </div>
+      <button className="toggleChat">Show/Hide Chat</button>
+      <button className="toggleNotes">Show/Hide Notes</button>
+      </div>
       <div className="videoContainer">
       <Player
       playsInline
