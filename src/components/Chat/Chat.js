@@ -90,7 +90,6 @@ const Chat = ({ location }) => {
   });
   $(".menu").click(function(){
     $(".buttonStack").toggle();
-    
   });
   $(".disableCustomLayout").click(function(){
     $(".disableCustomLayout").hide();
